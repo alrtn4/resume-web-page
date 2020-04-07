@@ -1,5 +1,7 @@
 "use strict"
 
+//fader code
+
 let pic = document.querySelectorAll('#fader img');
 let button = document.querySelectorAll('.circle');
 let rButton = document.querySelector('#right');
@@ -7,6 +9,11 @@ let lButton = document.querySelector('#left');
 let fadeNumber , opacNumber;
 
 let intervalTag = setInterval(change , 5000);
+
+function change(){
+    fade();
+    opac();
+}
 
 fadeNumber = 0;
 
@@ -16,7 +23,7 @@ function fade(){
         fadeNumber = 3;
     }
     pic[fadeNumber].style.opacity = '0';
-    screenchecksmallcircle(fadeNumber);
+    screenCheckSmallCircle(fadeNumber);
 }
 
 opacNumber = 3;
@@ -27,10 +34,10 @@ function opac(){
         opacNumber = 3;
     }
     pic[opacNumber].style.opacity = '1';
-    screencheckbigcircle(opacNumber);
+    screenCheckBigCircle(opacNumber);
 }
 
-function screencheckbigcircle(number){
+function screenCheckBigCircle(number){
     if(Number(window.screen.width) >= 960){
         bigCircle1140(number);
     }else if(Number(window.screen.width) < 960){
@@ -38,7 +45,7 @@ function screencheckbigcircle(number){
     }
 }
 
-function screenchecksmallcircle(number){
+function screenCheckSmallCircle(number){
     if(Number(window.screen.width) >= 960){
         smallCircle1140(number);
     }else if(Number(window.screen.width) < 960){
@@ -126,9 +133,20 @@ function smallCircle1140(number){
     }
 }
 
-function change(){
-    fade();
-    opac();
+window.addEventListener('resize' , changeButtonsPosition);
+
+function changeButtonsPosition(){
+    if(Number(window.screen.width) >= 960){
+        smallCircle1140(0);
+        smallCircle1140(1);
+        smallCircle1140(2);
+        smallCircle1140(3);
+    }else if(Number(window.screen.width) < 960){
+        smallCircle360(0);
+        smallCircle360(1);
+        smallCircle360(2);
+        smallCircle360(3);
+    }
 }
 
 button[0].addEventListener('click' , b0);
@@ -139,60 +157,60 @@ button[3].addEventListener('click' , b3);
 function b0(){
     clearInterval(intervalTag);
     pic[opacNumber].style.opacity = '0';
-    pic[fadeNumber].style.opacity = '0';
+    // pic[fadeNumber].style.opacity = '0';
     pic[0].style.opacity = '1';
     pic[1].style.opacity = '0';
     opacNumber = 0;
     fadeNumber = 1;
     circleErase();
-    screencheckbigcircle(0);
+    screenCheckBigCircle(0);
     intervalTag = setInterval(change , 5000);
 }
 
 function b1(){
     clearInterval(intervalTag);
     pic[opacNumber].style.opacity = '0';
-    pic[fadeNumber].style.opacity = '0';
+    // pic[fadeNumber].style.opacity = '0';
     pic[1].style.opacity = '1';
     pic[2].style.opacity = '0';
     opacNumber = 1;
     fadeNumber = 2;
     circleErase();
-    screencheckbigcircle(1);
+    screenCheckBigCircle(1);
     intervalTag = setInterval(change , 5000);
 }
 
 function b2(){
     clearInterval(intervalTag);
     pic[opacNumber].style.opacity = '0';
-    pic[fadeNumber].style.opacity = '0';
+    // pic[fadeNumber].style.opacity = '0';
     pic[2].style.opacity = '1';
     pic[3].style.opacity = '0';
     opacNumber = 2;
     fadeNumber = 3;
     circleErase();
-    screencheckbigcircle(2);
+    screenCheckBigCircle(2);
     intervalTag = setInterval(change , 5000);
 }
 
 function b3(){
     clearInterval(intervalTag);
     pic[opacNumber].style.opacity = '0';
-    pic[fadeNumber].style.opacity = '0';
+    // pic[fadeNumber].style.opacity = '0';
     pic[3].style.opacity = '1';
     pic[0].style.opacity = '0';
     opacNumber = 3;
     fadeNumber = 0;
     circleErase();
-    screencheckbigcircle(3);
+    screenCheckBigCircle(3);
     intervalTag = setInterval(change , 5000);
 }
 
 function circleErase(){
-    screenchecksmallcircle(0);
-    screenchecksmallcircle(1);
-    screenchecksmallcircle(2);
-    screenchecksmallcircle(3);
+    screenCheckSmallCircle(0);
+    screenCheckSmallCircle(1);
+    screenCheckSmallCircle(2);
+    screenCheckSmallCircle(3);
 }
 
 rButton.addEventListener('click' , moveForward);
@@ -221,10 +239,10 @@ function moveBackward(){
 
 
 
+/************************************************************************/
 
 
-
-
+//navigator code
 
 let item = document.querySelectorAll('nav .item');
 let lastItem , nowItem , nextItem;
@@ -265,11 +283,11 @@ function clearShow(){
 
 
 
+/**********************************************************************/
 
 
 
-
-
+//market code
 
 let market = document.querySelector('#market');
 let productA = document.querySelectorAll('.product .purchase a');
@@ -311,11 +329,11 @@ function chooseOn(){
 
 
 
+/**********************************************************************/
 
 
 
-
-
+//page elements' "slide and fade by scrolling" code
 
 let page = document.querySelectorAll('.page');
 let personalInfo = document.querySelectorAll('.personal-info');
@@ -332,97 +350,42 @@ if(Number(window.screen.width) < 720){
     document.body.onscroll = scrollPAge360;
 }
 
-// function scrollPAge360(){
-//     console.log(pageYOffset);
-//     if(pageYOffset < 100){
-//         personalInfo[0].style.top = '100px';
-//         personalInfo[0].style.opacity = 0;
-//         outer.style.bottom = '100px';
-//         outer.style.opacity = 0;
-//     }
-//     if(window.pageYOffset > 100){
-//         personalInfo[0].style.top = 0;
-//         personalInfo[0].style.opacity = 1;
-//         outer.style.bottom = 0;
-//         outer.style.opacity = 1;
-//     }
-//     if(pageYOffset < 200){
-//         personalInfo[1].style.top = '100px';
-//         personalInfo[1].style.opacity = 0;
-//     }
-//     if(pageYOffset > 200){
-//         personalInfo[1].style.top = 0;
-//         personalInfo[1].style.opacity = 1;
-//     }
-//     if(pageYOffset < 400){
-//         profile.style.bottom = '100px';
-//         profile.style.opacity = 0;
-//     }
-//     if(pageYOffset > 400){
-//         profile.style.bottom = 0;
-//         profile.style.opacity = 1;
-//     }
-//     if(pageYOffset < 700){
-//         personalInfo[2].style.top = '100px';
-//         personalInfo[2].style.opacity = 0;
-//         fader.style.bottom = '100px';
-//         fader.style.opacity = 0;
-//     }
-//     if(pageYOffset > 700){
-//         personalInfo[2].style.top = 0;
-//         personalInfo[2].style.opacity = 1;
-//         fader.style.bottom = 0;
-//         fader.style.opacity = 1;
-//     }
-//     if(pageYOffset < 1735){
-//         market.style.top = '100px';
-//         market.style.opacity = 0;
-//     }
-//     if(pageYOffset > 1735){
-//         market.style.top = 0;
-//         market.style.opacity = 1;
-//     }
-//     if(pageYOffset < 1280){
-//         personalInfo[3].style.bottom = '100px';
-//         personalInfo[3].style.opacity = 0;
-//     }
-//     if(pageYOffset > 1280){
-//         personalInfo[3].style.bottom = 0;
-//         personalInfo[3].style.opacity = 1;
-//     }
-//     if(pageYOffset < 2350){
-//         personalInfo[4].style.top = '100px';
-//         personalInfo[4].style.opacity = 0;
-//         nav.style.bottom = '100px';
-//         nav.style.opacity = 0;
-//     }
-//     if(pageYOffset > 2350){
-//         personalInfo[4].style.top = 0;
-//         personalInfo[4].style.opacity = 1;
-//         nav.style.bottom = 0;
-//         nav.style.opacity = 1;
-//     }
-// }
+window.addEventListener('resize' , screenWidthCheck);
+
+function screenWidthCheck(){
+    if(Number(window.screen.width) >= 960){
+        resetTheProperties();
+        document.body.onscroll = scrollPAge960;
+    }
+    if(Number(window.screen.width) >= 720 && Number(window.screen.width) < 960){
+        resetTheProperties();
+        document.body.onscroll = scrollPAge720;
+    }
+    if(Number(window.screen.width) < 720){
+        resetTheProperties();
+        document.body.onscroll = scrollPAge360;
+    }
+}
 
 function scrollPAge360(){
     console.log(pageYOffset);
-    if(pageYOffset < 100){
+    if(pageYOffset < 50){
         personalInfo[0].style.left = '100px';
         personalInfo[0].style.opacity = 0;
         outer.style.left = '100px';
         outer.style.opacity = 0;
     }
-    if(window.pageYOffset > 100){
+    if(window.pageYOffset > 50){
         personalInfo[0].style.left = 0;
         personalInfo[0].style.opacity = 1;
         outer.style.left = 0;
         outer.style.opacity = 1;
     }
-    if(pageYOffset < 200){
+    if(pageYOffset < 400){
         personalInfo[1].style.left = '100px';
         personalInfo[1].style.opacity = 0;
     }
-    if(pageYOffset > 200){
+    if(pageYOffset > 400){
         personalInfo[1].style.left = 0;
         personalInfo[1].style.opacity = 1;
     }
@@ -446,11 +409,11 @@ function scrollPAge360(){
         fader.style.left = 0;
         fader.style.opacity = 1;
     }
-    if(pageYOffset < 1735){
+    if(pageYOffset < 1625){
         market.style.left = '100px';
         market.style.opacity = 0;
     }
-    if(pageYOffset > 1735){
+    if(pageYOffset > 1625){
         market.style.left = 0;
         market.style.opacity = 1;
     }
@@ -478,25 +441,25 @@ function scrollPAge360(){
 
 function scrollPAge720(){
     console.log(pageYOffset);
-    if(pageYOffset < 300){
+    if(pageYOffset < 200){
         personalInfo[0].style.right = '100px';
         personalInfo[0].style.opacity = 0;
         outer.style.left = '100px';
         outer.style.opacity = 0;
     }
-    if(window.pageYOffset > 300){
+    if(window.pageYOffset > 200){
         personalInfo[0].style.right = 0;
         personalInfo[0].style.opacity = 1;
         outer.style.left = 0;
         outer.style.opacity = 1;
     }
-    if(pageYOffset < 510){
+    if(pageYOffset < 400){
         personalInfo[1].style.left = '100px';
         personalInfo[1].style.opacity = 0;
         profile.style.left = '100px';
         profile.style.opacity = 0;
     }
-    if(pageYOffset > 510){
+    if(pageYOffset > 400){
         personalInfo[1].style.left = 0;
         personalInfo[1].style.opacity = 1;
         profile.style.left = 0;
@@ -514,25 +477,25 @@ function scrollPAge720(){
         fader.style.left = 0;
         fader.style.opacity = 1;
     }
-    if(pageYOffset < 1120){
+    if(pageYOffset < 1000){
         personalInfo[3].style.left = '100px';
         personalInfo[3].style.opacity = 0;
         market.style.left = '100px';
         market.style.opacity = 0;
     }
-    if(pageYOffset > 1120){
+    if(pageYOffset > 1000){
         personalInfo[3].style.left = 0;
         personalInfo[3].style.opacity = 1;
         market.style.left = 0;
         market.style.opacity = 1;
     }
-    if(pageYOffset < 1525){
+    if(pageYOffset < 1430){
         personalInfo[4].style.left = '100px';
         personalInfo[4].style.opacity = 0;
         nav.style.left = '100px';
         nav.style.opacity = 0;
     }
-    if(pageYOffset > 1525){
+    if(pageYOffset > 1430){
         personalInfo[4].style.left = 0;
         personalInfo[4].style.opacity = 1;
         nav.style.left = 0;
@@ -604,13 +567,42 @@ function scrollPAge960(){
     }
 }
 
+function resetTheProperties(){
+    personalInfo[0].style.removeProperty('left');
+    personalInfo[0].style.removeProperty('right');
+    outer.style.removeProperty('left');
+    outer.style.removeProperty('right');
+    personalInfo[1].style.removeProperty('left');
+    personalInfo[1].style.removeProperty('right');
+    profile.style.removeProperty('left');
+    profile.style.removeProperty('right');
+    personalInfo[2].style.removeProperty('left');
+    personalInfo[2].style.removeProperty('right');
+    fader.style.removeProperty('left');
+    fader.style.removeProperty('right');
+    market.style.removeProperty('left');
+    market.style.removeProperty('right');
+    personalInfo[3].style.removeProperty('left');
+    personalInfo[3].style.removeProperty('right');
+    personalInfo[4].style.removeProperty('left');
+    personalInfo[4].style.removeProperty('right');
+    nav.style.removeProperty('left');
+    nav.style.removeProperty('right');
+}
 
 
 
 
 
 
+/*************************************************************************/
 
+
+
+
+
+
+//toolbar button code
 
 let menuButton = document.querySelector('#toolbar img');
 let topmenu = document.querySelector('#toolbar ul');
@@ -637,24 +629,12 @@ function fall(){
 
 
 
+/*********************************************************************/
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//navigator code during 360px,720px and 960px width 
 
 let navitem = document.querySelectorAll('.item >a');
 let navsubitem = document.querySelectorAll('.subitem >a')
@@ -685,7 +665,24 @@ function navFall(event){
 
 
 
+/**************************************************************************/
 
+//header code
 
+let hImg = document.querySelectorAll('header img');
+let hImgNumber = 1;
 
+changer();
+setInterval(changer , 5000);
 
+function changer(){
+    hImg[hImgNumber].style.opacity = '0';
+    hImg[hImgNumber].style.transform = 'scale(1)';
+    if(hImgNumber == 0){
+        hImgNumber = 1;
+    }else{
+        hImgNumber = 0;
+    }
+    hImg[hImgNumber].style.opacity = '1';
+    hImg[hImgNumber].style.transform = 'scale(1.1)';
+}

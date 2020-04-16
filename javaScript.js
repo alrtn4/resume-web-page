@@ -602,6 +602,7 @@ function resetTheProperties(){
 
 let menuButton = document.querySelector('#toolbar img');
 let topmenu = document.querySelector('#toolbar ul');
+let toolbarItem = document.querySelectorAll('#toolbar li');
 let open = false;
 
 menuButton.addEventListener('click' , fall);
@@ -620,7 +621,14 @@ function fall(){
     }
 }
 
+for(let i of toolbarItem){
+    i.addEventListener('click' , toolbarDisapear);
+}
 
+function toolbarDisapear(){
+    topmenu.style.height = 0;
+    open = false;
+}
 
 
 

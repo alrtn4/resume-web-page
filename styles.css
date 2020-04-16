@@ -460,6 +460,7 @@ main{
     border-radius: 3px;
     background-color: white;
     top:107px;
+    outline: none;
     transition: 0.6s;
 }
 
@@ -516,6 +517,7 @@ main{
     left: 10px;
     color: white;
     background-color: transparent;
+    outline: none;
     transition: 0.6s;
 }
 
@@ -526,6 +528,7 @@ main{
     right: 20px;
     color: white;
     background-color: transparent;
+    outline: none;
     transition: 0.6s;
 }
 
@@ -738,6 +741,10 @@ nav a{
     width: 100%;
 }
 
+nav a:hover{
+    color: white;
+}
+
 nav .submenu{
     display: none;
 }
@@ -835,6 +842,51 @@ footer a:hover{
     color: white;
 }
 
+
+
+
+
+
+/******************************************************************************************/
+
+
+
+
+
+
+@media screen and (max-width: 359px){
+
+    .personal-info{
+        margin-left: 0;
+    }
+
+
+
+
+
+    #cube{
+        padding: 20px;
+        float: right;
+    }
+
+
+
+
+
+
+    #profile{
+        margin: 25px 60px;
+    }
+
+
+
+
+
+    footer #links a{
+        font-size: 10px;
+    }
+
+}
 
 
 

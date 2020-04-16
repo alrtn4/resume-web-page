@@ -133,9 +133,9 @@ function smallCircle1140(number){
     }
 }
 
-window.addEventListener('resize' , changeButtonsPosition);
+window.addEventListener('resize' , startButtonsPosition);
 
-function changeButtonsPosition(){
+function startButtonsPosition(){
     if(Number(window.screen.width) >= 960){
         smallCircle1140(0);
         smallCircle1140(1);
@@ -157,7 +157,6 @@ button[3].addEventListener('click' , b3);
 function b0(){
     clearInterval(intervalTag);
     pic[opacNumber].style.opacity = '0';
-    // pic[fadeNumber].style.opacity = '0';
     pic[0].style.opacity = '1';
     pic[1].style.opacity = '0';
     opacNumber = 0;
@@ -170,7 +169,6 @@ function b0(){
 function b1(){
     clearInterval(intervalTag);
     pic[opacNumber].style.opacity = '0';
-    // pic[fadeNumber].style.opacity = '0';
     pic[1].style.opacity = '1';
     pic[2].style.opacity = '0';
     opacNumber = 1;
@@ -183,7 +181,6 @@ function b1(){
 function b2(){
     clearInterval(intervalTag);
     pic[opacNumber].style.opacity = '0';
-    // pic[fadeNumber].style.opacity = '0';
     pic[2].style.opacity = '1';
     pic[3].style.opacity = '0';
     opacNumber = 2;
@@ -196,7 +193,6 @@ function b2(){
 function b3(){
     clearInterval(intervalTag);
     pic[opacNumber].style.opacity = '0';
-    // pic[fadeNumber].style.opacity = '0';
     pic[3].style.opacity = '1';
     pic[0].style.opacity = '0';
     opacNumber = 3;
@@ -397,23 +393,23 @@ function scrollPAge360(){
         profile.style.left = 0;
         profile.style.opacity = 1;
     }
-    if(pageYOffset < 700){
+    if(pageYOffset < 1000){
         personalInfo[2].style.left = '100px';
         personalInfo[2].style.opacity = 0;
         fader.style.left = '100px';
         fader.style.opacity = 0;
     }
-    if(pageYOffset > 700){
+    if(pageYOffset > 1000){
         personalInfo[2].style.left = 0;
         personalInfo[2].style.opacity = 1;
         fader.style.left = 0;
         fader.style.opacity = 1;
     }
-    if(pageYOffset < 1625){
+    if(pageYOffset < 1575){
         market.style.left = '100px';
         market.style.opacity = 0;
     }
-    if(pageYOffset > 1625){
+    if(pageYOffset > 1575){
         market.style.left = 0;
         market.style.opacity = 1;
     }
@@ -425,13 +421,13 @@ function scrollPAge360(){
         personalInfo[3].style.left = 0;
         personalInfo[3].style.opacity = 1;
     }
-    if(pageYOffset < 2350){
+    if(pageYOffset < 2300){
         personalInfo[4].style.left = '100px';
         personalInfo[4].style.opacity = 0;
         nav.style.left = '100px';
         nav.style.opacity = 0;
     }
-    if(pageYOffset > 2350){
+    if(pageYOffset > 2300){
         personalInfo[4].style.left = 0;
         personalInfo[4].style.opacity = 1;
         nav.style.left = 0;

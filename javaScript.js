@@ -602,7 +602,7 @@ function resetTheProperties(){
 
 let menuButton = document.querySelector('#toolbar img');
 let topmenu = document.querySelector('#toolbar ul');
-let toolbarItem = document.querySelectorAll('#toolbar li');
+let toolbarItem = document.querySelectorAll('#toolbar a');
 let open = false;
 
 menuButton.addEventListener('click' , fall);

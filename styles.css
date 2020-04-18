@@ -93,6 +93,10 @@ body{
     color: white;
 }
 
+#toolbar li:last-child{
+    border-bottom: 1px solid white;
+}
+
 
 
 
@@ -680,6 +684,17 @@ main{
 #personal-info4 p{
     color: #e6c890;
 }
+
+
+
+
+
+
+
+#page5{
+    padding-top: 50px;
+}
+
 
 
 

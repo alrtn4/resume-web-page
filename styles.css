@@ -1112,8 +1112,9 @@ footer a:hover{
         overflow: visible;
     }
     
-    
-    
+    #toolbar li:last-child {
+        border-bottom: none;    
+    }
     
     
     

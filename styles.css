@@ -748,6 +748,13 @@ nav a{
     width: 100%;
 }
 
+nav span{
+    float: left;
+    padding-left: 10px;
+    padding-top: 2px;
+    font-size: large;
+}
+
 nav a:hover{
     color: white;
 }
@@ -792,9 +799,9 @@ nav .subitem .subitem >a{
     font-size: 14px;
 }
 
-nav span{
+/* nav span{
     display: none;
-}
+} */
 
 
 
@@ -1557,6 +1564,15 @@ footer a:hover{
 
     nav a{
         color: white;
+        width: 100%;
+    }
+
+    nav span{
+        float: left;
+    }
+
+    .rightQoute{
+        display: none;
     }
 
     nav .item{
@@ -1597,6 +1613,7 @@ footer a:hover{
         text-align: right;
         position: relative;
         padding: 0 20px;
+        padding-left: 0;
         border-top: 1px solid black;
         background-color: #98c647;
     }
@@ -1616,10 +1633,6 @@ footer a:hover{
 
     nav .subitem:first-child{
         border-top: none;
-    }
-
-    nav span{
-        float: left;
     }
 
     .subitem:last-of-type{

@@ -241,9 +241,22 @@ function moveBackward(){
 //navigator code
 
 let item = document.querySelectorAll('nav .item');
+let submenu = document.querySelectorAll('nav .submenu');
 let lastItem , nowItem , nextItem;
 nowItem = 0;
 lastItem = 3;
+
+window.addEventListener('resize' , corrector);
+
+function corrector(){
+    if(Number(window.screen.width) >= 1140 ){
+        for(let sm of submenu){
+            if(sm.style.display == 'none'){
+                sm.style.display = 'block';
+            } 
+        }
+    }
+}
 
 let intervalTag2 = setInterval(menuShow , 5000);
 

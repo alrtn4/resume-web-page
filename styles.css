@@ -140,17 +140,21 @@ header h2 span{
 
 main{
     float: right;
-    background-image: url('images/bg6.jpg');
+    background-image: url('images/bg8.jpg');
+    background-size: 100% auto;
 }
 
 
 
 
-/* #half-page{
+/* .half-page{
     width: 50%;
     height: 1000px;
-    background-image: url('images/bg5.jpg');
-} */
+    background-image: url('images/bg2.jpg'); */
+    /* float: right; */
+    /* z-index: -1; */
+    /* position: absolute; */
+/* } */
 
 
 

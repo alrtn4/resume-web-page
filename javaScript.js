@@ -247,17 +247,17 @@ let lastItem , nowItem , nextItem;
 nowItem = 0;
 lastItem = 3;
 
-window.addEventListener('resize' , corrector);
+// window.addEventListener('resize' , corrector);
 
-function corrector(){
-    if(Number(window.screen.width) >= 1140 ){
-        for(let sm of submenu){
-            if(sm.style.display == 'none'){
-                sm.style.display = 'block';
-            } 
-        }
-    }
-}
+// function corrector(){
+//     if(Number(window.screen.width) >= 1140 ){
+//         for(let sm of submenu){
+//             // if(sm.style.display == 'none'){
+//             //     sm.style.display = '';
+//             // } 
+//         }
+//     }
+// }
 
 let intervalTag2 = setInterval(menuShow , 5000);
 
@@ -675,7 +675,7 @@ function navFall(event){
         item.style.display = 'block';
         event.target.index = 1;
     }else if(i == 1){
-        item.style.display = 'none';
+        item.style.display = '';
         event.target.index = 0;
     }
 }

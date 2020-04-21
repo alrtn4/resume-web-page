@@ -138,12 +138,19 @@ header h2 span{
 
 
 
-main{
+/* main{
     float: right;
     background-image: url('images/bg8.jpg');
     background-size: 100% auto;
-}
+} */
 
+main{
+    float: right;
+    background-image: url('images/bg23.jpg') , url('images/bg25.jpg');
+    background-size: 51% , 50%;
+    background-position: right , left;
+    background-repeat: repeat-y , repeat-y;
+}
 
 
 

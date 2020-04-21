@@ -38,17 +38,17 @@ function opac(){
 }
 
 function screenCheckBigCircle(number){
-    if(Number(window.screen.width) >= 960){
+    if(getWidth() >= 960){
         bigCircle1140(number);
-    }else if(Number(window.screen.width) < 960){
+    }else if(getWidth() < 960){
         bigCircle360(number);
     }
 }
 
 function screenCheckSmallCircle(number){
-    if(Number(window.screen.width) >= 960){
+    if(getWidth() >= 960){
         smallCircle1140(number);
-    }else if(Number(window.screen.width) < 960){
+    }else if(getWidth() < 960){
         smallCircle360(number);
     }
 }
@@ -136,12 +136,13 @@ function smallCircle1140(number){
 window.addEventListener('resize' , startButtonsPosition);
 
 function startButtonsPosition(){
-    if(Number(window.screen.width) >= 960){
+    // console.log('hiiiiiiiiiiiiiiiiiiiii '+getWidth()+'     '+Number(window.screen.width));
+    if(getWidth() >= 960){
         smallCircle1140(0);
         smallCircle1140(1);
         smallCircle1140(2);
         smallCircle1140(3);
-    }else if(Number(window.screen.width) < 960){
+    }else if(getWidth() < 960){
         smallCircle360(0);
         smallCircle360(1);
         smallCircle360(2);
@@ -349,28 +350,28 @@ let personalInfo = document.querySelectorAll('.personal-info');
 let fader = document.querySelector('#fader');
 let profile = document.querySelector('#profile');
 
-if(Number(window.screen.width) >= 960){
+if(getWidth() >= 960){
     document.body.onscroll = scrollPAge960;
 }
-if(Number(window.screen.width) >= 720 && Number(window.screen.width) < 960){
+if(getWidth() >= 720 && getWidth() < 960){
     document.body.onscroll = scrollPAge720;
 }
-if(Number(window.screen.width) < 720){
+if(getWidth() < 720){
     document.body.onscroll = scrollPAge360;
 }
 
 window.addEventListener('resize' , screenWidthCheck);
 
 function screenWidthCheck(){
-    if(Number(window.screen.width) >= 960){
+    if(getWidth() >= 960){
         resetTheProperties();
         document.body.onscroll = scrollPAge960;
     }
-    if(Number(window.screen.width) >= 720 && Number(window.screen.width) < 960){
+    if(getWidth() >= 720 && getWidth() < 960){
         resetTheProperties();
         document.body.onscroll = scrollPAge720;
     }
-    if(Number(window.screen.width) < 720){
+    if(getWidth() < 720){
         resetTheProperties();
         document.body.onscroll = scrollPAge360;
     }
@@ -622,9 +623,9 @@ menuButton.addEventListener('click' , fall);
 
 function fall(){
     if(open == false){
-        if(Number(window.screen.width) < 720){
+        if(getWidth() < 720){
             topmenu.style.height = '150px';
-        }else if(Number(window.screen.width) >= 720){
+        }else if(getWidth() >= 720){
             topmenu.style.height = '250px';
         }
         open = true;
@@ -702,4 +703,22 @@ function changer(){
     }
     hImg[hImgNumber].style.opacity = '1';
     hImg[hImgNumber].style.transform = 'scale(1.1)';
+}
+
+
+
+
+
+/**************************************************************************/
+
+//function for accessing the width of browser
+
+function getWidth() {
+    return Math.max(
+      document.body.scrollWidth,
+      document.documentElement.scrollWidth,
+      document.body.offsetWidth,
+      document.documentElement.offsetWidth,
+      document.documentElement.clientWidth
+    );
 }

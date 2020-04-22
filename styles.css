@@ -146,10 +146,11 @@ header h2 span{
 
 main{
     float: right;
-    background-image: url('images/bg23.jpg') , url('images/bg25.jpg');
-    background-size: 51% , 50%;
+    /* background-image: url('images/bg12.jpg') , url('images/bg25.jpg'); */
+    background-image: url('images/bg27.jpg');
+    /* background-size: 51% , 50%;
     background-position: right , left;
-    background-repeat: repeat-y , repeat-y;
+    background-repeat: repeat , repeat-y; */
 }
 
 

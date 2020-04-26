@@ -138,31 +138,14 @@ header h2 span{
 
 
 
-/* main{
-    float: right;
-    background-image: url('images/bg8.jpg');
-    background-size: 100% auto;
-} */
 
 main{
     float: right;
-    /* background-image: url('images/bg12.jpg') , url('images/bg25.jpg'); */
     background-image: url('images/bg1.jpg');
-    /* background-size: 51% , 50%;
-    background-position: right , left;
-    background-repeat: repeat , repeat-y; */
 }
 
 
 
-/* .half-page{
-    width: 50%;
-    height: 1000px;
-    background-image: url('images/bg2.jpg'); */
-    /* float: right; */
-    /* z-index: -1; */
-    /* position: absolute; */
-/* } */
 
 
 

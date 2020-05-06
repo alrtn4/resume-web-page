@@ -481,6 +481,10 @@ main{
 
 #b0{
     left: 172px;
+    /* top: 106px; */
+    /* width: 7px; */
+    /* height: 7px; */
+    border-radius: 4px;
 }
 
 #b1{
@@ -492,12 +496,7 @@ main{
 }
 
 #b3{
-    top: 106px;
     left: 141px;
-    width: 7px;
-    height: 7px;
-    border-radius: 4px;
-    background-color: rgb(250, 3, 3);
 }
 
 #left{
@@ -967,6 +966,12 @@ footer a:hover{
         margin-left: 5px;
     }
 
+
+
+
+
+
+
     #fader{
         margin: 75px 3%;
     }
@@ -1280,7 +1285,7 @@ footer a:hover{
         top:215px;
     }
 
-    .circle:hover{
+    .circle:hover , .selected{
         width: 14px !important;
         height: 14px !important;
         border-radius: 7px !important;
@@ -1305,7 +1310,11 @@ footer a:hover{
     }
 
     #b0{
+        /* top: 213px; */
         left: 345px;
+        /* width: 14px;
+        height: 14px;
+        border-radius: 7px; */
     }
 
     #b1{
@@ -1317,11 +1326,7 @@ footer a:hover{
     }
 
     #b3{
-        top: 213px;
         left: 283px;
-        width: 14px;
-        height: 14px;
-        border-radius: 7px;
     }
 
     #left{

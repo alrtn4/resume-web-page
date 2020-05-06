@@ -688,43 +688,71 @@ function toolbarDisapear(){
 
 
 
-//navigator code
+//navigator code for width bigger than 1140px
 
-let item = document.querySelectorAll('nav .item');
-let submenu = document.querySelectorAll('nav .submenu');
-let lastItem , nowItem , nextItem;
-nowItem = 0;
+// let item = document.querySelectorAll('nav .item');
+// let submenu = document.querySelectorAll('nav .submenu');
+// let lastItem , nowItem , nextItem;
+// nowItem = 0;
+// lastItem = 3;
+
+// let intervalTag2 = setInterval(menuShow , 5000);
+
+// function menuShow(){
+//     item[nowItem].classList.add('hover');
+//     item[lastItem].classList.remove('hover');
+//     nowItem++;
+//     if(nowItem == 4){
+//         nowItem = 0;
+//     }
+//     lastItem++;
+//     if(lastItem == 4){
+//         lastItem = 0;
+//     }
+// }
+
+// let nav = document.querySelector('nav');
+// nav.addEventListener('mouseenter' , clearShow);
+// nav.addEventListener('mouseleave' , setShow);
+// function setShow(){
+//     intervalTag2 = setInterval(menuShow , 5000);
+// }
+// function clearShow(){
+//     clearInterval(intervalTag2);
+//     let activeItem = nowItem - 1;
+//     if(activeItem < 0){
+//         activeItem = 3;
+//     }
+//     item[activeItem].classList.remove('hover');
+// }
+
+
+
+let item = $('nav .item');
+let currentItem , lastItem;
+currentItem = 0;
 lastItem = 3;
 
-let intervalTag2 = setInterval(menuShow , 5000);
+let intervalTag2 = setInterval(moveNext , 5000); 
+function moveNext(){
+    item.eq(currentItem).addClass('hover');
+    item.eq(lastItem).removeClass('hover');
+    nextNumber(currentItem);
+    nextNumber(lastItem);
+}
 
-function menuShow(){
-    item[nowItem].classList.add('hover');
-    item[lastItem].classList.remove('hover');
-    nowItem++;
-    if(nowItem == 4){
-        nowItem = 0;
-    }
-    lastItem++;
-    if(lastItem == 4){
-        lastItem = 0;
+function nextNumber(number){
+    number++;
+    if(number > 3){
+        number = 0;
     }
 }
 
-let nav = document.querySelector('nav');
-nav.addEventListener('mouseenter' , clearShow);
-nav.addEventListener('mouseleave' , setShow);
-function setShow(){
-    intervalTag2 = setInterval(menuShow , 5000);
-}
-function clearShow(){
+$(nav).hover(() => {
     clearInterval(intervalTag2);
-    let activeItem = nowItem - 1;
-    if(activeItem < 0){
-        activeItem = 3;
-    }
-    item[activeItem].classList.remove('hover');
-}
+} , () => {
+    intervalTag2 = setInterval(moveNext , 5000);
+})
 
 
 

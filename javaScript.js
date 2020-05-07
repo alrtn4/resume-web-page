@@ -384,6 +384,7 @@ let page = document.querySelectorAll('.page');
 let personalInfo = document.querySelectorAll('.personal-info');
 let fader = document.querySelector('#fader');
 let profile = document.querySelector('#profile');
+let nav = document.querySelector('nav');
 
 if(getWidth() >= 960){
     document.body.onscroll = scrollPAge960;
@@ -766,31 +767,39 @@ $(nav).hover(() => {
 
 //navigator code during 360px,720px and 960px width 
 
-let navitem = document.querySelectorAll('.item >a');
-let navsubitem = document.querySelectorAll('.subitem >a')
+// let navitem = document.querySelectorAll('.item >a');
+// let navsubitem = document.querySelectorAll('.subitem >a')
 
-for(let i=0; i < navitem.length; i++){
-    navitem[i].index = 0;
-    navitem[i].addEventListener('click' , navFall);
-}
+// for(let i=0; i < navitem.length; i++){
+//     navitem[i].index = 0;
+//     navitem[i].addEventListener('click' , navFall);
+// }
 
-for(let i=0; i < navsubitem.length; i++){
-    navsubitem[i].index = 0;
-    navsubitem[i].addEventListener('click' , navFall);
-}
+// for(let i=0; i < navsubitem.length; i++){
+//     navsubitem[i].index = 0;
+//     navsubitem[i].addEventListener('click' , navFall);
+// }
 
-function navFall(event){
+// function navFall(event){
+//     event.preventDefault();
+//     let i = event.target.index;
+//     let item = event.target.nextSibling.nextSibling;
+//     if(i == 0){
+//         item.style.display = 'block';
+//         event.target.index = 1;
+//     }else if(i == 1){
+//         item.style.display = '';
+//         event.target.index = 0;
+//     }
+// }
+
+
+
+$('nav a').on('click' , function(event){
     event.preventDefault();
-    let i = event.target.index;
-    let item = event.target.nextSibling.nextSibling;
-    if(i == 0){
-        item.style.display = 'block';
-        event.target.index = 1;
-    }else if(i == 1){
-        item.style.display = '';
-        event.target.index = 0;
-    }
-}
+    $(this).siblings('.submenu').slideToggle();
+    $(this).parent().siblings().find('.submenu').slideUp();
+});
 
 
 

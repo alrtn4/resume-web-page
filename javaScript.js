@@ -418,69 +418,81 @@ function scrollPAge360(){
     if(pageYOffset < 50){
         personalInfo[0].style.left = '100px';
         personalInfo[0].style.opacity = 0;
-        outer.style.left = '100px';
-        outer.style.opacity = 0;
     }
     if(window.pageYOffset > 50){
         personalInfo[0].style.left = 0;
         personalInfo[0].style.opacity = 1;
-        outer.style.left = 0;
+    }
+    if(pageYOffset < 300){
+        outer.style.right = '100px';
+        outer.style.opacity = 0;
+    }
+    if(window.pageYOffset > 300){
+        outer.style.right = 0;
         outer.style.opacity = 1;
     }
-    if(pageYOffset < 400){
+    if(pageYOffset < 600){
         personalInfo[1].style.left = '100px';
         personalInfo[1].style.opacity = 0;
     }
-    if(pageYOffset > 400){
+    if(pageYOffset > 600){
         personalInfo[1].style.left = 0;
         personalInfo[1].style.opacity = 1;
     }
-    if(pageYOffset < 400){
-        profile.style.left = '100px';
+    if(pageYOffset < 800){
+        profile.style.right = '100px';
         profile.style.opacity = 0;
     }
-    if(pageYOffset > 400){
-        profile.style.left = 0;
+    if(pageYOffset > 800){
+        profile.style.right = 0;
         profile.style.opacity = 1;
     }
     if(pageYOffset < 1000){
         personalInfo[2].style.left = '100px';
         personalInfo[2].style.opacity = 0;
-        fader.style.left = '100px';
-        fader.style.opacity = 0;
     }
     if(pageYOffset > 1000){
         personalInfo[2].style.left = 0;
         personalInfo[2].style.opacity = 1;
-        fader.style.left = 0;
+    }
+    if(pageYOffset < 1200){
+        fader.style.right = '100px';
+        fader.style.opacity = 0;
+    }
+    if(pageYOffset > 1200){
+        fader.style.right = 0;
         fader.style.opacity = 1;
     }
-    if(pageYOffset < 1575){
-        market.style.left = '100px';
-        market.style.opacity = 0;
-    }
-    if(pageYOffset > 1575){
-        market.style.left = 0;
-        market.style.opacity = 1;
-    }
-    if(pageYOffset < 1280){
+    if(pageYOffset < 1500){
         personalInfo[3].style.left = '100px';
         personalInfo[3].style.opacity = 0;
     }
-    if(pageYOffset > 1280){
+    if(pageYOffset > 1500){
         personalInfo[3].style.left = 0;
         personalInfo[3].style.opacity = 1;
+    }
+    if(pageYOffset < 1575){
+        market.style.right = '100px';
+        market.style.opacity = 0;
+    }
+    if(pageYOffset > 1575){
+        market.style.right = 0;
+        market.style.opacity = 1;
     }
     if(pageYOffset < 2300){
         personalInfo[4].style.left = '100px';
         personalInfo[4].style.opacity = 0;
-        nav.style.left = '100px';
-        nav.style.opacity = 0;
     }
     if(pageYOffset > 2300){
         personalInfo[4].style.left = 0;
         personalInfo[4].style.opacity = 1;
-        nav.style.left = 0;
+    }
+    if(pageYOffset < 2736){
+        nav.style.right = '100px';
+        nav.style.opacity = 0;
+    }
+    if(pageYOffset > 2736){
+        nav.style.right = 0;
         nav.style.opacity = 1;
     }
 }
@@ -502,13 +514,13 @@ function scrollPAge720(){
     if(pageYOffset < 400){
         personalInfo[1].style.left = '100px';
         personalInfo[1].style.opacity = 0;
-        profile.style.left = '100px';
+        profile.style.right = '100px';
         profile.style.opacity = 0;
     }
     if(pageYOffset > 400){
         personalInfo[1].style.left = 0;
         personalInfo[1].style.opacity = 1;
-        profile.style.left = 0;
+        profile.style.right = 0;
         profile.style.opacity = 1;
     }
     if(pageYOffset < 715){
@@ -526,23 +538,23 @@ function scrollPAge720(){
     if(pageYOffset < 1000){
         personalInfo[3].style.left = '100px';
         personalInfo[3].style.opacity = 0;
-        market.style.left = '100px';
+        market.style.right = '100px';
         market.style.opacity = 0;
     }
     if(pageYOffset > 1000){
         personalInfo[3].style.left = 0;
         personalInfo[3].style.opacity = 1;
-        market.style.left = 0;
+        market.style.right = 0;
         market.style.opacity = 1;
     }
     if(pageYOffset < 1430){
-        personalInfo[4].style.left = '100px';
+        personalInfo[4].style.right = '100px';
         personalInfo[4].style.opacity = 0;
         nav.style.left = '100px';
         nav.style.opacity = 0;
     }
     if(pageYOffset > 1430){
-        personalInfo[4].style.left = 0;
+        personalInfo[4].style.right = 0;
         personalInfo[4].style.opacity = 1;
         nav.style.left = 0;
         nav.style.opacity = 1;
@@ -552,61 +564,61 @@ function scrollPAge720(){
 function scrollPAge960(){
     console.log(pageYOffset);
     if(pageYOffset < 300){
-        personalInfo[0].style.right = '100px';
+        personalInfo[0].style.left = '100px';
         personalInfo[0].style.opacity = 0;
-        outer.style.left = '100px';
+        outer.style.right = '100px';
         outer.style.opacity = 0;
     }
     if(window.pageYOffset > 300){
-        personalInfo[0].style.right = 0;
+        personalInfo[0].style.left = 0;
         personalInfo[0].style.opacity = 1;
-        outer.style.left = 0;
+        outer.style.right = 0;
         outer.style.opacity = 1;
     }
     if(pageYOffset < 715){
-        personalInfo[1].style.left = '100px';
+        personalInfo[1].style.right = '100px';
         personalInfo[1].style.opacity = 0;
         profile.style.left = '100px';
         profile.style.opacity = 0;
     }
     if(pageYOffset > 715){
-        personalInfo[1].style.left = 0;
+        personalInfo[1].style.right = 0;
         personalInfo[1].style.opacity = 1;
         profile.style.left = 0;
         profile.style.opacity = 1;
     }
     if(pageYOffset < 1220){
-        personalInfo[2].style.right = '100px';
+        personalInfo[2].style.left = '100px';
         personalInfo[2].style.opacity = 0;
-        fader.style.left = '100px';
+        fader.style.right = '100px';
         fader.style.opacity = 0;
     }
     if(pageYOffset > 1220){
-        personalInfo[2].style.right = 0;
+        personalInfo[2].style.left = 0;
         personalInfo[2].style.opacity = 1;
-        fader.style.left = 0;
+        fader.style.right = 0;
         fader.style.opacity = 1;
     }
     if(pageYOffset < 1630){
-        personalInfo[3].style.left = '100px';
+        personalInfo[3].style.right = '100px';
         personalInfo[3].style.opacity = 0;
         market.style.left = '100px';
         market.style.opacity = 0;
     }
     if(pageYOffset > 1630){
-        personalInfo[3].style.left = 0;
+        personalInfo[3].style.right = 0;
         personalInfo[3].style.opacity = 1;
         market.style.left = 0;
         market.style.opacity = 1;
     }
     if(pageYOffset < 2090){
-        personalInfo[4].style.left = '100px';
+        personalInfo[4].style.right = '100px';
         personalInfo[4].style.opacity = 0;
         nav.style.left = '100px';
         nav.style.opacity = 0;
     }
     if(pageYOffset > 2090){
-        personalInfo[4].style.left = 0;
+        personalInfo[4].style.right = 0;
         personalInfo[4].style.opacity = 1;
         nav.style.left = 0;
         nav.style.opacity = 1;

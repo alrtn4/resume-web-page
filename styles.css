@@ -16,8 +16,13 @@
     box-sizing: border-box;
 }
 
+html{
+    overflow-x: hidden;
+}
+
 body{
     direction: rtl;
+    overflow-x: hidden;
 }
 
 .clear{

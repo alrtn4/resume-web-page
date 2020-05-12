@@ -650,36 +650,92 @@ function resetTheProperties(){
 
 //toolbar button code
 
-let menuButton = document.querySelector('#toolbar img');
-let topmenu = document.querySelector('#toolbar ul');
-let toolbarItem = document.querySelectorAll('#toolbar a');
-let open = false;
+// let menuButton = document.querySelector('#toolbar img');
+// let topmenu = document.querySelector('#toolbar ul');
+// let toolbarItem = document.querySelectorAll('#toolbar a');
+// let open = false;
 
-menuButton.addEventListener('click' , fall);
+// menuButton.addEventListener('click' , fall);
 
-function fall(){
-    if(open == false){
-        if(getWidth() < 720){
-            topmenu.style.height = '150px';
-        }else if(getWidth() >= 720){
-            topmenu.style.height = '250px';
-        }
-        open = true;
-    }else if(open == true){
-        topmenu.style.height = '0';
+// function fall(){
+//     if(open == false){
+//         if(getWidth() < 720){
+//             topmenu.style.height = '150px';
+//         }else if(getWidth() >= 720){
+//             topmenu.style.height = '250px';
+//         }
+//         open = true;
+//     }else if(open == true){
+//         topmenu.style.height = '0';
+//         open = false;
+//     }
+// }
+
+// for(let i of toolbarItem){
+//     i.addEventListener('click' , toolbarDisapear);
+// }
+
+// function toolbarDisapear(){
+//     topmenu.style.height = 0;
+//     open = false;
+// }
+
+
+
+
+
+
+
+// let menuButton = $('#toolbar img');
+// let topmenu = $('#toolbar ul');
+// let toolbarItem = $('#toolbar a');
+// let open = false;
+
+// menuButton.on('click' , () => {
+//     if(open == false){
+//         topmenu.slideDown();
+//         open = true;
+//     }else if(open == true){
+//         topmenu.slideUp();
+//         open = false;
+//     }
+// });
+
+// toolbarItem.on('click' , () => {
+//     if(getWidth() < 960){
+//         topmenu.slideUp();
+//         open = false;
+//     }
+// });
+
+// $(window).resize(() => {
+//     if(getWidth() >= 960){
+//         topmenu.css('display' , '');
+//         open = false;
+//     }
+// });
+
+
+
+
+
+
+$('#toolbar img').on('click' , () => {
+    $('#toolbar ul').slideToggle();
+});
+
+$('#toolbar a').click(function(){
+    if(getWidth() < 960){
+        $('#toolbar ul').slideUp();
+    }
+})
+
+$(window).resize(() => {
+    if(getWidth() >= 960){
+        topmenu.css('display' , '');
         open = false;
     }
-}
-
-for(let i of toolbarItem){
-    i.addEventListener('click' , toolbarDisapear);
-}
-
-function toolbarDisapear(){
-    topmenu.style.height = 0;
-    open = false;
-}
-
+});
 
 
 
@@ -826,6 +882,17 @@ function changer(){
     hImg[hImgNumber].style.transform = 'scale(1.1)';
 }
 
+
+
+
+// setInterval(() => {
+//     $('header img').css('transition' , '0s');
+//     $('header img').eq(0).css({'opacity' : 0 , 'transform' : 'scale(1)'});
+//     $('header img').eq(0).insertBefore('header h2');
+//     setTimeout(() => {
+//         $('header img').eq(1).css({'opacity' : 1 , 'transform' : 'scale(1.1)' , 'transition' : '0.6s'});    
+//     }, 1000);
+// }, 5000);
 
 
 

@@ -67,9 +67,12 @@ body{
     top: 50px;
     background-color: black;
     position: absolute;
-    transition: 0.3s;
+    /* transition: 0.3s; */
+    /* transition: 0.3s; */
     width: 100%;
-    height: 0;
+    /* height: 0; */
+    height: 150px;
+    display: none;
     overflow: hidden;
 }
 
@@ -913,7 +916,11 @@ footer a:hover{
     
     #toolbar li a{
         font-size: 18px;
+    }
 
+    #toolbar ul{
+        height: 250px;
+        display: none;
     }
 
 
@@ -1110,6 +1117,8 @@ footer a:hover{
     #toolbar ul{
         position: static;
         overflow: visible;
+        display: block;
+        height: 50px;
     }
     
     #toolbar li:last-child {

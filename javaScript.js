@@ -2,240 +2,6 @@
 
 //fader code
 
-// let pic = document.querySelectorAll('#fader img');
-// let button = document.querySelectorAll('.circle');
-// let rButton = document.querySelector('#right');
-// let lButton = document.querySelector('#left');
-// let fadeNumber , opacNumber;
-
-// let intervalTag = setInterval(change , 5000);
-
-// function change(){
-//     fade();
-//     opac();
-// }
-
-// fadeNumber = 0;
-
-// function fade(){
-//     fadeNumber--;
-//     if(fadeNumber < 0){
-//         fadeNumber = 3;
-//     }
-//     pic[fadeNumber].style.opacity = '0';
-//     screenCheckSmallCircle(fadeNumber);
-// }
-
-// opacNumber = 3;
-
-// function opac(){
-//     opacNumber--;
-//     if(opacNumber < 0){
-//         opacNumber = 3;
-//     }
-//     pic[opacNumber].style.opacity = '1';
-//     screenCheckBigCircle(opacNumber);
-// }
-
-// function screenCheckBigCircle(number){
-//     if(getWidth() >= 960){
-//         bigCircle1140(number);
-//     }else if(getWidth() < 960){
-//         bigCircle360(number);
-//     }
-// }
-
-// function screenCheckSmallCircle(number){
-//     if(getWidth() >= 960){
-//         smallCircle1140(number);
-//     }else if(getWidth() < 960){
-//         smallCircle360(number);
-//     }
-// }
-
-// function bigCircle360(number){
-//     button[number].style.width = '7px';
-//     button[number].style.height = '7px';
-//     button[number].style.borderRadius = '4px';
-//     button[number].style.backgroundColor = 'rgb(250, 3, 3)';
-//     button[number].style.top = '106px';
-//     if(number == 3){
-//         button[number].style.left = '141px';
-//     }
-//     if(number == 2){
-//         button[number].style.left = '151px';
-//     }
-//     if(number == 1){
-//         button[number].style.left = '161px';
-//     }
-//     if(number == 0){
-//         button[number].style.left = '171px';
-//     }
-// }
-
-// function smallCircle360(number){
-//     button[number].style.width = '5px';
-//     button[number].style.height = '5px';
-//     button[number].style.borderRadius = '3px';
-//     button[number].style.backgroundColor = 'white';
-//     button[number].style.top = '107px';
-//     if(number == 3){
-//         button[number].style.left = '142px';
-//     }
-//     if(number == 2){
-//         button[number].style.left = '152px';
-//     }
-//     if(number == 1){
-//         button[number].style.left = '162px';
-//     }
-//     if(number == 0){
-//         button[number].style.left = '172px';
-//     }
-// }
-
-// function bigCircle1140(number){
-//     button[number].style.width = '14px';
-//     button[number].style.height = '14px';
-//     button[number].style.borderRadius = '7px';
-//     button[number].style.backgroundColor = 'rgb(250, 3, 3)';
-//     button[number].style.top = '213px';
-//     if(number == 3){
-//         button[number].style.left = '283px';
-//     }
-//     if(number == 2){
-//         button[number].style.left = '303px';
-//     }
-//     if(number == 1){
-//         button[number].style.left = '323px';
-//     }
-//     if(number == 0){
-//         button[number].style.left = '343px';
-//     }
-// }
-
-// function smallCircle1140(number){
-//     button[number].style.width = '10px';
-//     button[number].style.height = '10px';
-//     button[number].style.borderRadius = '5px';
-//     button[number].style.backgroundColor = 'white';
-//     button[number].style.top = '215px';
-//     if(number == 3){
-//         button[number].style.left = '285px';
-//     }
-//     if(number == 2){
-//         button[number].style.left = '305px';
-//     }
-//     if(number == 1){
-//         button[number].style.left = '325px';
-//     }
-//     if(number == 0){
-//         button[number].style.left = '345px';
-//     }
-// }
-
-// window.addEventListener('resize' , startButtonsPosition);
-
-// function startButtonsPosition(){
-//     // console.log('hiiiiiiiiiiiiiiiiiiiii '+getWidth()+'     '+Number(window.screen.width));
-//     if(getWidth() >= 960){
-//         smallCircle1140(0);
-//         smallCircle1140(1);
-//         smallCircle1140(2);
-//         smallCircle1140(3);
-//     }else if(getWidth() < 960){
-//         smallCircle360(0);
-//         smallCircle360(1);
-//         smallCircle360(2);
-//         smallCircle360(3);
-//     }
-// }
-
-// button[0].addEventListener('click' , b0);
-// button[1].addEventListener('click' , b1);
-// button[2].addEventListener('click' , b2);
-// button[3].addEventListener('click' , b3);
-
-// function b0(){
-//     clearInterval(intervalTag);
-//     pic[opacNumber].style.opacity = '0';
-//     pic[0].style.opacity = '1';
-//     pic[1].style.opacity = '0';
-//     opacNumber = 0;
-//     fadeNumber = 1;
-//     circleErase();
-//     screenCheckBigCircle(0);
-//     intervalTag = setInterval(change , 5000);
-// }
-
-// function b1(){
-//     clearInterval(intervalTag);
-//     pic[opacNumber].style.opacity = '0';
-//     pic[1].style.opacity = '1';
-//     pic[2].style.opacity = '0';
-//     opacNumber = 1;
-//     fadeNumber = 2;
-//     circleErase();
-//     screenCheckBigCircle(1);
-//     intervalTag = setInterval(change , 5000);
-// }
-
-// function b2(){
-//     clearInterval(intervalTag);
-//     pic[opacNumber].style.opacity = '0';
-//     pic[2].style.opacity = '1';
-//     pic[3].style.opacity = '0';
-//     opacNumber = 2;
-//     fadeNumber = 3;
-//     circleErase();
-//     screenCheckBigCircle(2);
-//     intervalTag = setInterval(change , 5000);
-// }
-
-// function b3(){
-//     clearInterval(intervalTag);
-//     pic[opacNumber].style.opacity = '0';
-//     pic[3].style.opacity = '1';
-//     pic[0].style.opacity = '0';
-//     opacNumber = 3;
-//     fadeNumber = 0;
-//     circleErase();
-//     screenCheckBigCircle(3);
-//     intervalTag = setInterval(change , 5000);
-// }
-
-// function circleErase(){
-//     screenCheckSmallCircle(0);
-//     screenCheckSmallCircle(1);
-//     screenCheckSmallCircle(2);
-//     screenCheckSmallCircle(3);
-// }
-
-// rButton.addEventListener('click' , moveForward);
-
-// function moveForward(){
-//     clearInterval(intervalTag);
-//     change();
-//     intervalTag = setInterval(change , 5000);
-// }
-
-// lButton.addEventListener('click' , moveBackward);
-
-// function moveBackward(){
-//     if(opacNumber == 0){
-//         b1();
-//     }else if(opacNumber == 1){
-//         b2();
-//     }else if(opacNumber == 2){
-//         b3();
-//     }else if(opacNumber == 3){
-//         b0();
-//     }
-// }
-
-
-
-
-
 let intervalTag;
 let timeoutTag;
 let rButton = $('#right');
@@ -658,79 +424,7 @@ function resetTheProperties(){
 
 
 
-
-
 //toolbar button code
-
-// let menuButton = document.querySelector('#toolbar img');
-// let topmenu = document.querySelector('#toolbar ul');
-// let toolbarItem = document.querySelectorAll('#toolbar a');
-// let open = false;
-
-// menuButton.addEventListener('click' , fall);
-
-// function fall(){
-//     if(open == false){
-//         if(getWidth() < 720){
-//             topmenu.style.height = '150px';
-//         }else if(getWidth() >= 720){
-//             topmenu.style.height = '250px';
-//         }
-//         open = true;
-//     }else if(open == true){
-//         topmenu.style.height = '0';
-//         open = false;
-//     }
-// }
-
-// for(let i of toolbarItem){
-//     i.addEventListener('click' , toolbarDisapear);
-// }
-
-// function toolbarDisapear(){
-//     topmenu.style.height = 0;
-//     open = false;
-// }
-
-
-
-
-
-
-
-// let menuButton = $('#toolbar img');
-// let topmenu = $('#toolbar ul');
-// let toolbarItem = $('#toolbar a');
-// let open = false;
-
-// menuButton.on('click' , () => {
-//     if(open == false){
-//         topmenu.slideDown();
-//         open = true;
-//     }else if(open == true){
-//         topmenu.slideUp();
-//         open = false;
-//     }
-// });
-
-// toolbarItem.on('click' , () => {
-//     if(getWidth() < 960){
-//         topmenu.slideUp();
-//         open = false;
-//     }
-// });
-
-// $(window).resize(() => {
-//     if(getWidth() >= 960){
-//         topmenu.css('display' , '');
-//         open = false;
-//     }
-// });
-
-
-
-
-
 
 $('#toolbar img').on('click' , () => {
     $('#toolbar ul').slideToggle();
@@ -744,7 +438,7 @@ $('#toolbar a').click(function(){
 
 $(window).resize(() => {
     if(getWidth() >= 960){
-        topmenu.css('display' , '');
+        $('#toolbar ul').css('display' , '');
         open = false;
     }
 });
@@ -759,44 +453,6 @@ $(window).resize(() => {
 
 //navigator code for width bigger than 1140px
 
-// let item = document.querySelectorAll('nav .item');
-// let submenu = document.querySelectorAll('nav .submenu');
-// let lastItem , nowItem , nextItem;
-// nowItem = 0;
-// lastItem = 3;
-
-// let intervalTag2 = setInterval(menuShow , 5000);
-
-// function menuShow(){
-//     item[nowItem].classList.add('hover');
-//     item[lastItem].classList.remove('hover');
-//     nowItem++;
-//     if(nowItem == 4){
-//         nowItem = 0;
-//     }
-//     lastItem++;
-//     if(lastItem == 4){
-//         lastItem = 0;
-//     }
-// }
-
-// let nav = document.querySelector('nav');
-// nav.addEventListener('mouseenter' , clearShow);
-// nav.addEventListener('mouseleave' , setShow);
-// function setShow(){
-//     intervalTag2 = setInterval(menuShow , 5000);
-// }
-// function clearShow(){
-//     clearInterval(intervalTag2);
-//     let activeItem = nowItem - 1;
-//     if(activeItem < 0){
-//         activeItem = 3;
-//     }
-//     item[activeItem].classList.remove('hover');
-// }
-
-
-
 let item = $('nav .item');
 let currentItem , lastItem;
 currentItem = 0;
@@ -806,19 +462,19 @@ let intervalTag2 = setInterval(moveNext , 5000);
 function moveNext(){
     item.eq(currentItem).addClass('hover');
     item.eq(lastItem).removeClass('hover');
-    nextNumber(currentItem);
-    nextNumber(lastItem);
-}
-
-function nextNumber(number){
-    number++;
-    if(number > 3){
-        number = 0;
+    currentItem++;
+    if(currentItem > 3){
+        currentItem = 0;
+    }
+    lastItem++;
+    if(lastItem > 3){
+        lastItem = 0;
     }
 }
 
 $(nav).hover(() => {
     clearInterval(intervalTag2);
+    item.eq(lastItem).removeClass('hover');
 } , () => {
     intervalTag2 = setInterval(moveNext , 5000);
 })
@@ -834,34 +490,6 @@ $(nav).hover(() => {
 
 
 //navigator code during 360px,720px and 960px width 
-
-// let navitem = document.querySelectorAll('.item >a');
-// let navsubitem = document.querySelectorAll('.subitem >a')
-
-// for(let i=0; i < navitem.length; i++){
-//     navitem[i].index = 0;
-//     navitem[i].addEventListener('click' , navFall);
-// }
-
-// for(let i=0; i < navsubitem.length; i++){
-//     navsubitem[i].index = 0;
-//     navsubitem[i].addEventListener('click' , navFall);
-// }
-
-// function navFall(event){
-//     event.preventDefault();
-//     let i = event.target.index;
-//     let item = event.target.nextSibling.nextSibling;
-//     if(i == 0){
-//         item.style.display = 'block';
-//         event.target.index = 1;
-//     }else if(i == 1){
-//         item.style.display = '';
-//         event.target.index = 0;
-//     }
-// }
-
-
 
 $('nav a').on('click' , function(event){
     event.preventDefault();
@@ -912,16 +540,6 @@ function changer(){
 /**************************************************************************/
 
 //function for accessing the width of browser
-
-// function getWidth() {
-//     return Math.max(
-//       document.body.scrollWidth,
-//       document.documentElement.scrollWidth,
-//       document.body.offsetWidth,
-//       document.documentElement.offsetWidth,
-//       document.documentElement.clientWidth
-//     );
-// }
 
 function getWidth(){
     return window.innerWidth;
